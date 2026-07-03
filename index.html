@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Creek Gun Club — Mechanicsville, VA (Hanover County)</title>
+<meta name="description" content="Black Creek Gun Club — a private outdoor shooting range in Hanover County, Virginia since 1966. Six ranges, memberships, matches, and events at 4292 Range Rd, Mechanicsville, VA.">
+<link rel="canonical" href="https://blackcreekgunclub.org/">
+<meta property="og:title" content="Black Creek Gun Club — Mechanicsville, VA">
+<meta property="og:description" content="Private outdoor shooting range in Hanover County, Virginia since 1966. Six ranges, memberships, matches, and events.">
+<meta property="og:url" content="https://blackcreekgunclub.org/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%232f4a3a'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23c9a35a' stroke-width='6'/><circle cx='50' cy='50' r='8' fill='%23c9a35a'/></svg>">
+<style>
+  :root{
+    --green-950:#16241d;
+    --green-900:#1d3128;
+    --green-800:#2f4a3a;
+    --green-700:#3d5c49;
+    --brass:#c9a35a;
+    --brass-light:#e0c084;
+    --cream:#f5f1e8;
+    --cream-dim:#e7e0d1;
+    --ink:#232a26;
+    --ink-soft:#4d5a52;
+    --card:#ffffff;
+    --line:#ddd6c6;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(22,36,29,.12);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Source Sans 3",system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+  }
+  h1,h2,h3,h4{font-family:"Bitter",Georgia,serif;line-height:1.2}
+  img{max-width:100%}
+  a{color:var(--green-800)}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+
+  /* ---------- Top bar ---------- */
+  .topbar{
+    background:var(--green-950);
+    color:var(--cream-dim);
+    font-size:.85rem;
+    padding:7px 0;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .topbar a{color:var(--brass-light);text-decoration:none}
+  .status-pill{
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:999px;padding:2px 12px;font-weight:600;
+  }
+  .status-dot{width:9px;height:9px;border-radius:50%;background:#8a8a8a;flex:none}
+  .status-pill.open .status-dot{background:#4ade80;box-shadow:0 0 8px #4ade80}
+  .status-pill.closed .status-dot{background:#f87171}
+
+  /* ---------- Nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:var(--green-900);
+    box-shadow:0 2px 12px rgba(0,0,0,.25);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--cream);padding:8px 0}
+  .brand svg{flex:none}
+  .brand-name{font-family:"Bitter",serif;font-weight:800;font-size:1.12rem;letter-spacing:.02em}
+  .brand-sub{display:block;font-family:"Source Sans 3",sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+  .navlinks{display:flex;gap:4px;list-style:none;align-items:center}
+  .navlinks a{
+    color:var(--cream-dim);text-decoration:none;font-weight:600;font-size:.92rem;
+    padding:8px 13px;border-radius:8px;transition:background .15s,color .15s;
+  }
+  .navlinks a:hover{background:rgba(255,255,255,.09);color:#fff}
+  .navlinks a.cta{background:var(--brass);color:var(--green-950);margin-left:6px}
+  .navlinks a.cta:hover{background:var(--brass-light)}
+  .menu-btn{display:none;background:none;border:0;color:var(--cream);font-size:1.7rem;cursor:pointer;padding:4px 8px}
+
+  /* ---------- Hero ---------- */
+  header.hero{
+    position:relative;color:var(--cream);text-align:center;
+    padding:110px 22px 120px;overflow:hidden;
+    background:
+      linear-gradient(rgba(22,36,29,.78),rgba(22,36,29,.88)),
+      radial-gradient(1200px 500px at 50% 120%, #3d5c49 0%, transparent 60%),
+      var(--green-900);
+  }
+  header.hero::before{
+    content:"";position:absolute;inset:0;opacity:.18;pointer-events:none;
+    background-image:
+      repeating-linear-gradient(115deg, transparent 0 42px, rgba(201,163,90,.35) 42px 43px),
+      repeating-linear-gradient(-65deg, transparent 0 64px, rgba(201,163,90,.2) 64px 65px);
+  }
+  .est{
+    display:inline-block;border:1px solid var(--brass);color:var(--brass-light);
+    letter-spacing:.3em;text-transform:uppercase;font-size:.78rem;font-weight:700;
+    padding:7px 18px;border-radius:999px;margin-bottom:24px;
+  }
+  header.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;margin-bottom:8px}
+  header.hero .tagline{
+    font-size:clamp(1.05rem,2.4vw,1.35rem);color:var(--cream-dim);
+    max-width:640px;margin:0 auto 34px;
+  }
+  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:700;font-size:1rem;
+    padding:14px 30px;border-radius:10px;transition:transform .15s,box-shadow .15s,background .15s;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-brass{background:var(--brass);color:var(--green-950)}
+  .btn-brass:hover{background:var(--brass-light);box-shadow:0 8px 20px rgba(201,163,90,.35)}
+  .btn-ghost{border:2px solid rgba(255,255,255,.4);color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--brass);color:var(--brass-light)}
+  .hero-stats{
+    position:relative;display:flex;justify-content:center;gap:clamp(20px,6vw,70px);
+    margin-top:64px;flex-wrap:wrap;
+  }
+  .hero-stat{min-width:110px}
+  .hero-stat b{display:block;font-family:"Bitter",serif;font-size:2rem;color:var(--brass-light)}
+  .hero-stat span{font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cream-dim)}
+
+  /* ---------- Sections ---------- */
+  section{padding:78px 0}
+  section:nth-of-type(even){background:#efe9db}
+  .kicker{
+    color:var(--brass);font-weight:700;letter-spacing:.25em;text-transform:uppercase;
+    font-size:.8rem;margin-bottom:10px;
+  }
+  h2.section-title{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:14px;color:var(--green-900)}
+  .section-lede{color:var(--ink-soft);max-width:680px;margin-bottom:40px;font-size:1.06rem}
+
+  /* ---------- Live updates ---------- */
+  .social-grid{display:grid;grid-template-columns:minmax(0,540px) 1fr;gap:34px;align-items:start}
+  .fb-embed-card{
+    background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+    overflow:hidden;border:1px solid var(--line);
+  }
+  .fb-embed-card .embed-head{
+    display:flex;align-items:center;gap:10px;padding:14px 18px;
+    background:var(--green-900);color:var(--cream);font-weight:700;
+  }
+  .live-dot{width:10px;height:10px;border-radius:50%;background:#f87171;animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .fb-frame-holder{position:relative;min-height:600px;background:#fafaf7}
+  .fb-frame-holder iframe{display:block;width:100%;height:600px;border:0;position:relative;z-index:1;background:transparent}
+  .embed-fallback{
+    position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;
+    align-items:center;justify-content:center;text-align:center;padding:30px;
+    color:var(--ink-soft);z-index:0;
+  }
+  .social-cards{display:flex;flex-direction:column;gap:18px}
+  .social-card{
+    display:flex;gap:16px;align-items:flex-start;text-decoration:none;
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 22px;box-shadow:var(--shadow);transition:transform .15s;
+    color:var(--ink);
+  }
+  .social-card:hover{transform:translateY(-3px)}
+  .social-icon{
+    flex:none;width:46px;height:46px;border-radius:12px;display:flex;
+    align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.3rem;
+  }
+  .ic-fb{background:#1877f2}
+  .ic-ig{background:radial-gradient(circle at 30% 110%,#fdc468,#df4996 60%,#8a3ab9)}
+  .social-card h3{font-size:1.05rem;margin-bottom:3px;color:var(--green-900)}
+  .social-card p{font-size:.92rem;color:var(--ink-soft)}
+  .social-card .handle{color:var(--green-800);font-weight:700;font-size:.9rem}
+
+  /* ---------- Hours ---------- */
+  .hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+  .hours-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:var(--shadow);overflow:hidden;
+  }
+  .hours-card table{width:100%;border-collapse:collapse}
+  .hours-card th{
+    text-align:left;background:var(--green-900);color:var(--cream);
+    font-family:"Bitter",serif;padding:16px 22px;font-size:1.1rem;
+  }
+  .hours-card th .today-status{float:right;font-family:"Source Sans 3",sans-serif;font-size:.85rem;font-weight:600;color:var(--brass-light)}
+  .hours-card td{padding:12px 22px;border-top:1px solid var(--line);font-size:.98rem}
+  .hours-card td:last-child{text-align:right;font-weight:600}
+  .hours-card tr.today td{
+    background:#f3ecd9;color:var(--green-900);font-weight:700;
+    border-left:4px solid var(--brass);
+  }
+  .hours-note{padding:13px 22px;font-size:.85rem;color:var(--ink-soft);background:#faf7f0;border-top:1px solid var(--line)}
+  .map-card{
+    border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+    border:1px solid var(--line);background:var(--card);
+  }
+  .map-card iframe{display:block;width:100%;height:330px;border:0}
+  .map-meta{padding:18px 22px}
+  .map-meta strong{font-family:"Bitter",serif;color:var(--green-900)}
+  .map-meta p{font-size:.95rem;color:var(--ink-soft)}
+  .map-meta a.btn{margin-top:12px;padding:10px 20px;font-size:.9rem}
+
+  /* ---------- Ranges ---------- */
+  .range-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+  .range-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px 24px;box-shadow:var(--shadow);position:relative;overflow:hidden;
+  }
+  .range-card::after{
+    content:"";position:absolute;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg,var(--brass),var(--brass-light));
+  }
+  .range-yard{
+    font-family:"Bitter",serif;font-size:2.1rem;font-weight:800;color:var(--green-800);
+  }
+  .range-yard small{font-size:1rem;color:var(--brass);font-weight:700;letter-spacing:.1em}
+  .range-card h3{font-size:1.05rem;margin:4px 0 8px;color:var(--green-900)}
+  .range-card p{font-size:.93rem;color:var(--ink-soft)}
+
+  /* ---------- Membership ---------- */
+  .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-bottom:34px}
+  .price-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:32px 28px;box-shadow:var(--shadow);text-align:center;display:flex;flex-direction:column;
+  }
+  .price-card.featured{
+    background:var(--green-900);color:var(--cream);border-color:var(--green-900);
+    transform:scale(1.03);
+  }
+  .price-card.featured h3{color:var(--cream)}
+  .price-card h3{font-size:1.1rem;color:var(--green-900);letter-spacing:.06em;text-transform:uppercase}
+  .price{font-family:"Bitter",serif;font-size:2.9rem;font-weight:800;color:var(--brass);margin:12px 0 2px}
+  .price small{font-size:1rem;color:inherit;opacity:.75;font-family:"Source Sans 3",sans-serif;font-weight:600}
+  .price-card ul{list-style:none;margin:18px 0 24px;text-align:left;flex:1}
+  .price-card li{padding:7px 0 7px 26px;position:relative;font-size:.94rem}
+  .price-card li::before{content:"✓";position:absolute;left:2px;color:var(--brass);font-weight:800}
+  .price-card .btn{margin-top:auto}
+  .member-notes{
+    background:#f3ecd9;border:1px solid var(--brass);border-radius:var(--radius);
+    padding:20px 26px;font-size:.95rem;color:var(--ink);
+  }
+  .member-notes strong{color:var(--green-900)}
+
+  /* ---------- Events ---------- */
+  .event-list{display:grid;gap:16px;max-width:820px}
+  .event-item{
+    display:flex;gap:20px;align-items:center;background:var(--card);
+    border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;box-shadow:var(--shadow);
+  }
+  .event-date{
+    flex:none;width:74px;text-align:center;background:var(--green-800);color:var(--cream);
+    border-radius:10px;padding:10px 4px;font-family:"Bitter",serif;line-height:1.15;
+  }
+  .event-date b{display:block;font-size:1.5rem;color:var(--brass-light)}
+  .event-date span{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
+  .event-item h3{font-size:1.08rem;color:var(--green-900)}
+  .event-item p{font-size:.92rem;color:var(--ink-soft)}
+  .events-cta{margin-top:26px;font-size:.98rem}
+
+  /* ---------- Safety ---------- */
+  .rules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .rule{
+    background:var(--card);border-left:5px solid var(--brass);border-radius:10px;
+    padding:18px 20px;box-shadow:var(--shadow);font-size:.96rem;
+  }
+  .rule b{color:var(--green-900)}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:820px}
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    margin-bottom:12px;box-shadow:var(--shadow);overflow:hidden;
+  }
+  summary{
+    cursor:pointer;padding:17px 22px;font-weight:700;font-family:"Bitter",serif;
+    color:var(--green-900);list-style:none;position:relative;padding-right:50px;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    font-size:1.5rem;color:var(--brass);font-family:"Source Sans 3",sans-serif;transition:transform .2s;
+  }
+  details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+  details .faq-body{padding:0 22px 18px;color:var(--ink-soft);font-size:.97rem}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--green-950);color:var(--cream-dim);padding:64px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:44px}
+  footer h4{color:var(--brass-light);font-size:1rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+  footer p,footer li{font-size:.94rem}
+  footer ul{list-style:none}
+  footer li{margin-bottom:9px}
+  footer a{color:var(--cream-dim);text-decoration:none}
+  footer a:hover{color:var(--brass-light)}
+  .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .foot-brand .brand-name{color:var(--cream)}
+  .copyright{
+    border-top:1px solid rgba(255,255,255,.12);padding-top:22px;
+    font-size:.82rem;text-align:center;color:#8fa096;
+  }
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:900px){
+    .social-grid,.hours-grid{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:760px){
+    .menu-btn{display:block}
+    .navlinks{
+      position:absolute;top:64px;left:0;right:0;background:var(--green-900);
+      flex-direction:column;align-items:stretch;padding:10px 18px 18px;gap:2px;
+      display:none;box-shadow:0 12px 20px rgba(0,0,0,.3);
+    }
+    .navlinks.open{display:flex}
+    .navlinks a{padding:12px 14px}
+    .navlinks a.cta{margin-left:0;text-align:center;margin-top:8px}
+    .foot-grid{grid-template-columns:1fr}
+    .price-card.featured{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Top info bar ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <span id="status-pill" class="status-pill"><span class="status-dot"></span><span id="status-text">Checking range status…</span></span>
+    <span>📍 4292 Range Rd, Mechanicsville, VA 23111 &nbsp;·&nbsp; ☎ <a href="tel:+18047811945">(804) 781-1945</a></span>
+  </div>
+</div>
+
+<!-- ===== Nav ===== -->
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <svg width="38" height="38" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="#2f4a3a"/>
+        <circle cx="50" cy="50" r="30" fill="none" stroke="#c9a35a" stroke-width="6"/>
+        <circle cx="50" cy="50" r="8" fill="#c9a35a"/>
+        <line x1="50" y1="6" x2="50" y2="26" stroke="#c9a35a" stroke-width="5"/>
+        <line x1="50" y1="74" x2="50" y2="94" stroke="#c9a35a" stroke-width="5"/>
+        <line x1="6" y1="50" x2="26" y2="50" stroke="#c9a35a" stroke-width="5"/>
+        <line x1="74" y1="50" x2="94" y2="50" stroke="#c9a35a" stroke-width="5"/>
+      </svg>
+      <span>
+        <span class="brand-name">Black Creek Gun Club</span>
+        <span class="brand-sub">Hanover County · Virginia</span>
+      </span>
+    </a>
+    <button class="menu-btn" id="menu-btn" aria-label="Toggle menu">☰</button>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="#updates">Live Updates</a></li>
+      <li><a href="#hours">Hours</a></li>
+      <li><a href="#ranges">Ranges</a></li>
+      <li><a href="#membership">Membership</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a class="cta" href="#membership">Join the Club</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== Hero ===== -->
+<header class="hero" id="top">
+  <span class="est">Est. 1966 · Mechanicsville, Virginia</span>
+  <h1>Black Creek Gun Club</h1>
+  <p class="tagline">A private outdoor shooting range in the heart of Hanover County — six ranges, a tight-knit community, and sixty years of safe shooting tradition.</p>
+  <div class="hero-ctas">
+    <a class="btn btn-brass" href="#membership">Become a Member</a>
+    <a class="btn btn-ghost" href="#hours">Hours &amp; Directions</a>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat"><b id="years-open">60</b><span>Years Open</span></div>
+    <div class="hero-stat"><b>6</b><span>Ranges</span></div>
+    <div class="hero-stat"><b>100<small style="font-size:1.1rem">yd</small></b><span>Longest Range</span></div>
+    <div class="hero-stat"><b>7</b><span>Days a Week</span></div>
+  </div>
+</header>
+
+<!-- ===== Live social updates ===== -->
+<section id="updates">
+  <div class="wrap">
+    <p class="kicker">Straight from the range</p>
+    <h2 class="section-title">Live Updates</h2>
+    <p class="section-lede">Range conditions, match results, weather closures, and club news — posted as they happen. The feed below pulls directly from our Facebook page, so what you see here is always current.</p>
+    <div class="social-grid">
+      <div class="fb-embed-card">
+        <div class="embed-head"><span class="live-dot"></span> Latest from Facebook</div>
+        <div class="fb-frame-holder">
+          <iframe
+            title="Black Creek Gun Club Facebook feed"
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbcgc4292&tabs=timeline&width=500&height=600&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false"
+            loading="lazy"
+            allow="encrypted-media"
+            allowfullscreen="true">
+          </iframe>
+          <div class="embed-fallback">
+            <p><strong>Feed not loading?</strong><br>Some browsers block embedded feeds.</p>
+            <a class="btn btn-brass" href="https://www.facebook.com/bcgc4292" target="_blank" rel="noopener">Open our Facebook page →</a>
+          </div>
+        </div>
+      </div>
+      <div class="social-cards">
+        <a class="social-card" href="https://www.facebook.com/bcgc4292" target="_blank" rel="noopener">
+          <span class="social-icon ic-fb">f</span>
+          <span>
+            <h3>Blackcreek Gun Club on Facebook</h3>
+            <p>Club announcements, match schedules, and community photos.</p>
+            <span class="handle">facebook.com/bcgc4292</span>
+          </span>
+        </a>
+        <a class="social-card" href="https://www.facebook.com/p/Black-Creek-Shooting-Club-61586425992336/" target="_blank" rel="noopener">
+          <span class="social-icon ic-fb">f</span>
+          <span>
+            <h3>Black Creek Shooting Club</h3>
+            <p>Follow the newest chapter of the club for the latest range news.</p>
+            <span class="handle">Black Creek Shooting Club</span>
+          </span>
+        </a>
+        <a class="social-card" href="https://www.instagram.com/blackcreekshootingclub/" target="_blank" rel="noopener">
+          <span class="social-icon ic-ig">◎</span>
+          <span>
+            <h3>Instagram</h3>
+            <p>Photos and highlights from around the ranges.</p>
+            <span class="handle">@blackcreekshootingclub</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Hours & location ===== -->
+<section id="hours">
+  <div class="wrap">
+    <p class="kicker">Plan your visit</p>
+    <h2 class="section-title">Hours &amp; Location</h2>
+    <p class="section-lede">We're just off the intersection of I-295 and I-64 — an easy drive from Richmond, Ashland, and all of Hanover County. Today's hours are highlighted below.</p>
+    <div class="hours-grid">
+      <div class="hours-card">
+        <table id="hours-table">
+          <tr><th colspan="2">Range Hours <span class="today-status" id="table-status"></span></th></tr>
+          <tr data-day="1"><td>Monday</td><td>9:00 AM – 6:00 PM</td></tr>
+          <tr data-day="2"><td>Tuesday</td><td>9:00 AM – 6:00 PM</td></tr>
+          <tr data-day="3"><td>Wednesday</td><td>9:00 AM – 6:00 PM</td></tr>
+          <tr data-day="4"><td>Thursday</td><td>9:00 AM – 6:00 PM</td></tr>
+          <tr data-day="5"><td>Friday</td><td>9:00 AM – 6:00 PM</td></tr>
+          <tr data-day="6"><td>Saturday</td><td>9:00 AM – 6:00 PM</td></tr>
+          <tr data-day="0"><td>Sunday</td><td>1:00 PM – 5:00 PM</td></tr>
+        </table>
+        <div class="hours-note">⚠ Hours may change for severe weather, holidays, or scheduled matches — check the <a href="#updates">live updates</a> before heading out.</div>
+      </div>
+      <div class="map-card">
+        <iframe
+          title="Map to Black Creek Gun Club"
+          src="https://www.google.com/maps?q=4292+Range+Rd,+Mechanicsville,+VA+23111&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="map-meta">
+          <strong>Black Creek Gun Club</strong>
+          <p>4292 Range Rd, Mechanicsville, VA 23111<br>
+          ☎ <a href="tel:+18047811945">(804) 781-1945</a><br>
+          ✉ <a href="mailto:gunclub.blackcreek@gmail.com">gunclub.blackcreek@gmail.com</a></p>
+          <a class="btn btn-brass" href="https://www.google.com/maps/dir/?api=1&destination=4292+Range+Rd,+Mechanicsville,+VA+23111" target="_blank" rel="noopener">Get Directions →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Ranges ===== -->
+<section id="ranges">
+  <div class="wrap">
+    <p class="kicker">Six ranges, something for everyone</p>
+    <h2 class="section-title">Our Ranges</h2>
+    <p class="section-lede">What started in 1966 as founder Kay C. Young's personal range has grown into six dedicated ranges. Four are open to members daily; two are reserved for training, matches, and special events.</p>
+    <div class="range-grid">
+      <div class="range-card">
+        <div class="range-yard">100<small>YD</small></div>
+        <h3>Rifle Range</h3>
+        <p>Full-distance rifle work — sight in your hunting rifle or stretch out your precision loads.</p>
+      </div>
+      <div class="range-card">
+        <div class="range-yard">50<small>YD</small></div>
+        <h3>Mid Range</h3>
+        <p>Ideal for rimfire rifles, pistol-caliber carbines, and mid-distance handgun practice.</p>
+      </div>
+      <div class="range-card">
+        <div class="range-yard">25<small>YD</small></div>
+        <h3>Pistol Range</h3>
+        <p>Classic handgun distance for target practice, drills, and qualification work.</p>
+      </div>
+      <div class="range-card">
+        <div class="range-yard">15<small>YD</small></div>
+        <h3>Close Range</h3>
+        <p>Defensive pistol distances — perfect for new shooters and fundamentals training.</p>
+      </div>
+      <div class="range-card">
+        <div class="range-yard">×2<small></small></div>
+        <h3>Event Ranges</h3>
+        <p>Two additional ranges reserved for steel matches, training classes, and private events.</p>
+      </div>
+      <div class="range-card">
+        <div class="range-yard">☀<small></small></div>
+        <h3>Outdoor All Year</h3>
+        <p>Covered firing lines and outdoor lanes, open in every season the weather allows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Membership ===== -->
+<section id="membership">
+  <div class="wrap">
+    <p class="kicker">No waiting list · No initiation fee</p>
+    <h2 class="section-title">Membership</h2>
+    <p class="section-lede">Memberships run the calendar year. Come as often as you like and stay as long as you want — there are no time limits for members.</p>
+    <div class="price-grid">
+      <div class="price-card featured">
+        <h3>Individual</h3>
+        <div class="price">$350<small>/year</small></div>
+        <ul>
+          <li>Unlimited range visits</li>
+          <li>No time restrictions</li>
+          <li>Access to all four member ranges</li>
+          <li>Bring up to 2 guests per visit</li>
+        </ul>
+        <a class="btn btn-brass" href="mailto:gunclub.blackcreek@gmail.com?subject=Membership%20Inquiry">Apply Now</a>
+      </div>
+      <div class="price-card">
+        <h3>Family Add-On</h3>
+        <div class="price">$100<small>/year</small></div>
+        <ul>
+          <li>Covers your spouse</li>
+          <li>Covers your minor children</li>
+          <li>Same range access as you</li>
+          <li>Added to any individual membership</li>
+        </ul>
+        <a class="btn btn-brass" href="mailto:gunclub.blackcreek@gmail.com?subject=Family%20Membership%20Inquiry">Ask About Family</a>
+      </div>
+      <div class="price-card">
+        <h3>Guest Pass</h3>
+        <div class="price">$30<small>/day</small></div>
+        <ul>
+          <li>Must be accompanied by a member</li>
+          <li>Up to 2 guests per member visit</li>
+          <li>3-hour session</li>
+          <li>Great way to try the club out</li>
+        </ul>
+        <a class="btn btn-brass" href="#hours">Visit With a Member</a>
+      </div>
+    </div>
+    <div class="member-notes">
+      <strong>Before you join:</strong> Black Creek is an NRA-affiliated range, so current <strong>NRA membership is required</strong> for all club members. Every new member also attends a short <strong>safety briefing</strong> before their first range session. That's it — no waiting list, no initiation fee.
+    </div>
+  </div>
+</section>
+
+<!-- ===== Events ===== -->
+<section id="events">
+  <div class="wrap">
+    <p class="kicker">Get in on the action</p>
+    <h2 class="section-title">Matches &amp; Events</h2>
+    <p class="section-lede">The club hosts recurring competitions and training on our two dedicated event ranges. Dates are announced on our social feeds — here's what typically runs through the season.</p>
+    <div class="event-list">
+      <div class="event-item">
+        <div class="event-date"><b>SAT</b><span>Monthly</span></div>
+        <div>
+          <h3>Steel Shooting Match</h3>
+          <p>Black Creek Steel — fast-paced steel plate matches open to pistol and rimfire shooters of all skill levels.</p>
+        </div>
+      </div>
+      <div class="event-item">
+        <div class="event-date"><b>SUN</b><span>Monthly</span></div>
+        <div>
+          <h3>Tactical 2-Gun</h3>
+          <p>Rifle-and-pistol action matches on the event ranges. Bring both guns, mags, and a good attitude.</p>
+        </div>
+      </div>
+      <div class="event-item">
+        <div class="event-date"><b>NEW</b><span>Members</span></div>
+        <div>
+          <h3>New Member Safety Briefing</h3>
+          <p>Required orientation for all new members — range rules, commands, and facility walkthrough.</p>
+        </div>
+      </div>
+      <div class="event-item">
+        <div class="event-date"><b>FALL</b><span>Season</span></div>
+        <div>
+          <h3>Hunter Sight-In Days</h3>
+          <p>Get your deer rifle zeroed before the season opens on the 100-yard range.</p>
+        </div>
+      </div>
+    </div>
+    <p class="events-cta">📅 Exact dates and sign-ups are posted in the <a href="#updates">live updates feed</a> — follow us so you don't miss a match.</p>
+  </div>
+</section>
+
+<!-- ===== Safety ===== -->
+<section id="safety">
+  <div class="wrap">
+    <p class="kicker">Safety first, always</p>
+    <h2 class="section-title">Range Rules</h2>
+    <p class="section-lede">Sixty years of safe operation comes from everyone following the same simple rules, every visit.</p>
+    <div class="rules-grid">
+      <div class="rule"><b>1. Muzzle discipline.</b> Keep every firearm pointed downrange at all times.</div>
+      <div class="rule"><b>2. Treat every gun as loaded.</b> No exceptions, ever.</div>
+      <div class="rule"><b>3. Finger off the trigger</b> until your sights are on target and you're ready to fire.</div>
+      <div class="rule"><b>4. Eyes and ears required</b> for everyone on or near a firing line.</div>
+      <div class="rule"><b>5. Obey all range commands.</b> "Cease fire" means stop immediately, unload, and step back.</div>
+      <div class="rule"><b>6. Cold range means hands off.</b> No handling firearms while anyone is downrange.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="wrap">
+    <p class="kicker">Good to know</p>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>Is the club open to the public?</summary>
+        <div class="faq-body">Black Creek is a private membership club. Non-members can shoot as the guest of a current member ($30/day, up to two guests per member, three-hour sessions) — a great way to check the club out before joining.</div>
+      </details>
+      <details>
+        <summary>Does the club rent or provide firearms?</summary>
+        <div class="faq-body">No — bring your own firearms and ammunition. The club does not provide rental guns.</div>
+      </details>
+      <details>
+        <summary>Do I need to be an NRA member to join?</summary>
+        <div class="faq-body">Yes. As an NRA-affiliated range, all members must hold a current NRA membership. Annual NRA memberships can be purchased online in a few minutes.</div>
+      </details>
+      <details>
+        <summary>Is there a waiting list or initiation fee?</summary>
+        <div class="faq-body">Neither. Once your application and safety briefing are complete, you're a member. Memberships run the calendar year.</div>
+      </details>
+      <details>
+        <summary>How long can I stay per visit?</summary>
+        <div class="faq-body">Members have no time restrictions — come as often as you like and stay as long as you want during open hours. Guests are limited to three-hour sessions.</div>
+      </details>
+      <details>
+        <summary>Where exactly is the club?</summary>
+        <div class="faq-body">4292 Range Rd, Mechanicsville, VA 23111 — in Hanover County near the intersection of I-295 and I-64, about 15 minutes from downtown Richmond.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="34" height="34" viewBox="0 0 100 100" aria-hidden="true">
+            <circle cx="50" cy="50" r="46" fill="#2f4a3a"/>
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#c9a35a" stroke-width="6"/>
+            <circle cx="50" cy="50" r="8" fill="#c9a35a"/>
+          </svg>
+          <span class="brand-name">Black Creek Gun Club</span>
+        </div>
+        <p>Serving Hanover County shooters since 1966. Founded by Kay C. Young, who built the first range for his own use and grew it into the six-range club we enjoy today.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>4292 Range Rd<br>Mechanicsville, VA 23111</li>
+          <li><a href="tel:+18047811945">(804) 781-1945</a></li>
+          <li><a href="mailto:gunclub.blackcreek@gmail.com">gunclub.blackcreek@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/bcgc4292" target="_blank" rel="noopener">Facebook — Blackcreek Gun Club</a></li>
+          <li><a href="https://www.facebook.com/p/Black-Creek-Shooting-Club-61586425992336/" target="_blank" rel="noopener">Facebook — Black Creek Shooting Club</a></li>
+          <li><a href="https://www.instagram.com/blackcreekshootingclub/" target="_blank" rel="noopener">Instagram — @blackcreekshootingclub</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> Black Creek Gun Club · Mechanicsville, Virginia · All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ----- Mobile menu -----
+  var btn=document.getElementById('menu-btn'),links=document.getElementById('navlinks');
+  btn.addEventListener('click',function(){links.classList.toggle('open')});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A')links.classList.remove('open')});
+
+  // ----- Footer year + years-open counter -----
+  var now=new Date();
+  document.getElementById('year').textContent=now.getFullYear();
+  var yearsEl=document.getElementById('years-open');
+  if(yearsEl)yearsEl.textContent=(now.getFullYear()-1966);
+
+  // ----- Live open/closed status (club local time: America/New_York) -----
+  // hours[day] = [openHour, closeHour] in 24h; day 0 = Sunday
+  var hours={0:[13,17],1:[9,18],2:[9,18],3:[9,18],4:[9,18],5:[9,18],6:[9,18]};
+  function clubNow(){
+    try{
+      return new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'}));
+    }catch(e){return new Date();}
+  }
+  function fmtHour(h){
+    var ampm=h>=12?'PM':'AM';var h12=h%12;if(h12===0)h12=12;
+    return h12+':00 '+ampm;
+  }
+  function updateStatus(){
+    var n=clubNow(),day=n.getDay(),h=n.getHours()+n.getMinutes()/60;
+    var todays=hours[day],open=h>=todays[0]&&h<todays[1];
+    var pill=document.getElementById('status-pill'),txt=document.getElementById('status-text');
+    var tstat=document.getElementById('table-status');
+    pill.classList.remove('open','closed');
+    if(open){
+      pill.classList.add('open');
+      txt.textContent='Range is OPEN — closes '+fmtHour(todays[1]);
+      if(tstat)tstat.textContent='● Open now';
+    }else{
+      pill.classList.add('closed');
+      var msg;
+      if(h<todays[0]){msg='Opens today at '+fmtHour(todays[0]);}
+      else{
+        var next=(day+1)%7;
+        msg='Opens '+(next===0?'Sunday':['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][next])+' at '+fmtHour(hours[next][0]);
+      }
+      txt.textContent='Range is CLOSED — '+msg;
+      if(tstat)tstat.textContent='● Closed now';
+    }
+    // highlight today's row
+    var rows=document.querySelectorAll('#hours-table tr[data-day]');
+    rows.forEach(function(r){r.classList.toggle('today',parseInt(r.getAttribute('data-day'),10)===day)});
+  }
+  updateStatus();
+  setInterval(updateStatus,60000);
+})();
+</script>
+</body>
+</html>
